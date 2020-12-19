@@ -135,6 +135,26 @@ def process_type():
     :return: None if an invalid selection made otherwise an integer corresponding to a valid option
     """
     # TODO: Your code here
+    response = input('''
+[1] Retrieve entity
+[2] Retrieve entity details
+[3] Categorise entities by type
+[4] Categorise entities by gravity
+[5] Summarise entities by orbit
+''')
+    if response == "1":
+        return 1
+    elif response == "2":
+        return 2
+    elif response == "3":
+        return 3
+    elif response == "4":
+        return 4
+    elif response == "5":
+        return 5
+    else:
+        error("No valid response was entered.")
+        return None
 
 
 def entity_name():
@@ -289,3 +309,4 @@ menu()
 started("[Load Data]")
 completed("[Load Data]")
 source_data_path()
+process_type()
