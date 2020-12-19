@@ -48,7 +48,7 @@ def menu():
     elif response == "5":
         return 5
     else:
-        print("No Valid response was entered.")
+        error("No valid response was entered.")
         return None
 
 
@@ -109,6 +109,13 @@ def source_data_path():
     :return: None if the file path does not end in 'csv' otherwise return the file path entered by the user
     """
     # TODO: Your code here
+    file_path = input("Please enter a file path: ")
+    if file_path.endswith(".csv"):  # checks if the user's file path ends with ".csv"
+        print("Valid file:", file_path)
+        return file_path
+    else:
+        error("Invalid file format. Must end in '.csv'")
+        return None
 
 
 def process_type():
@@ -281,3 +288,4 @@ welcome()
 menu()
 started("[Load Data]")
 completed("[Load Data]")
+source_data_path()
