@@ -13,6 +13,7 @@ def welcome():
     title_length = len(title)  # retrieves the length of the title
     print('-' * int(title_length / 2) + title + '-' * int(title_length / 2))  # displays the title surrounded by dashes
 
+
 def menu():
     """
     Task 2: Display a menu of options and read the user's response.
@@ -63,6 +64,7 @@ def started(operation):
     :return: Does not return anything
     """
     # TODO: Your code here
+    print("\nOperation {} has started.".format(operation))
 
 
 def completed(operation):
@@ -272,5 +274,7 @@ def save():
     """
     # TODO: Your code here
 
+
 welcome()
 menu()
+started("[Load Data]")
