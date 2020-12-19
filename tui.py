@@ -188,7 +188,7 @@ def entity_details():
     entity = input("Please enter an entity: ")
     entity_list.append(entity)
 
-    integers = input("Please enter a list of integers (i.e. 0,1,5,7): ")
+    integers = input("Please enter a list of indexes (i.e. 0, 1, 5, 7): ")
     integers_list = list(map(int, integers.split(',')))  # takes the users string and turns it into a list of integers
     entity_list.append(integers_list)
 
