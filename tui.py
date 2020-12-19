@@ -167,6 +167,8 @@ def entity_name():
     :return: the name of an entity
     """
     # TODO: Your code here
+    entity = input("Please enter an entity: ")
+    return entity
 
 
 def entity_details():
@@ -310,3 +312,4 @@ started("[Load Data]")
 completed("[Load Data]")
 source_data_path()
 process_type()
+entity_name()
