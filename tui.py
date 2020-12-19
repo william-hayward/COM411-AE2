@@ -79,7 +79,7 @@ def completed(operation):
     :return: Does not return anything
     """
     # TODO: Your code here
-
+    print("\nOperation {} has completed.".format(operation))
 
 def error(error_msg):
     """
@@ -278,3 +278,4 @@ def save():
 welcome()
 menu()
 started("[Load Data]")
+completed("[Load Data]")
