@@ -29,6 +29,26 @@ def menu():
     :return: None if invalid selection otherwise an integer corresponding to a valid selection
     """
     # TODO: Your code here
+    response = input('''
+[1] Load Data
+[2] Process Data
+[3] Visualise Data
+[4] Save Data
+[5] Exit
+''')
+    if response == "1":
+        return 1
+    elif response == "2":
+        return 2
+    elif response == "3":
+        return 3
+    elif response == "4":
+        return 4
+    elif response == "5":
+        return 5
+    else:
+        print("No Valid response was entered.")
+        return None
 
 
 def started(operation):
@@ -251,3 +271,6 @@ def save():
     :return: None if an invalid selection is made otherwise an integer corresponding to a valid option
     """
     # TODO: Your code here
+
+welcome()
+menu()
