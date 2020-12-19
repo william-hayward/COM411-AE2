@@ -13,6 +13,7 @@ def run():
     # TODO: Your code here
 
     while True:
+        pass
         # Task 20: Using the appropriate function in the module tui, display a menu of options
         # for the different operations that can be performed on the data.
         # Assign the selected option to a suitable local variable

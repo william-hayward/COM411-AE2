@@ -9,7 +9,9 @@ def welcome():
     :return: Does not return anything.
     """
     # TODO: Your code here
-
+    title = "Solar Record Management System"  # sets the title into a variable "title"
+    title_length = len(title)  # retrieves the length of the title
+    print('-' * int(title_length / 2) + title + '-' * int(title_length / 2))  # displays the title surrounded by dashes
 
 def menu():
     """
