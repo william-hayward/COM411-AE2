@@ -183,6 +183,16 @@ def entity_details():
     :return: A list containing the name of an entity and a list of column indexes
     """
     # TODO: Your code here
+    entity_list = []
+
+    entity = input("Please enter an entity: ")
+    entity_list.append(entity)
+
+    integers = input("Please enter a list of integers (i.e. 0,1,5,7): ")
+    integers_list = list(map(int, integers.split(',')))  # takes the users string and turns it into a list of integers
+    entity_list.append(integers_list)
+
+    return entity_list
 
 
 def list_entity(entity, cols=[]):
@@ -306,10 +316,11 @@ def save():
     # TODO: Your code here
 
 
-welcome()
+'''welcome()
 menu()
 started("[Load Data]")
 completed("[Load Data]")
 source_data_path()
 process_type()
-entity_name()
+entity_name()'''
+print(entity_details())
