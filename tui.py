@@ -81,6 +81,7 @@ def completed(operation):
     # TODO: Your code here
     print("\nOperation {} has completed.".format(operation))
 
+
 def error(error_msg):
     """
     Task 5: Display an error message.
@@ -93,6 +94,7 @@ def error(error_msg):
     :return: Does not return anything
     """
     # TODO: Your code here
+    print("Error! {}".format(error_msg))
 
 
 def source_data_path():
