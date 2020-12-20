@@ -213,9 +213,16 @@ def list_entity(entity, cols=[]):
     :return: does not return anything
     """
     # TODO: Your code here
+    entity_list = []
+    if len(cols) != 0:
+        for i in cols:
+            entity_list.append(entity[i])
+        print(entity_list)
+    else:
+        print(entity)
 
 
-def list_entities():
+def list_entities(entities, cols=[]):
     """
     Task 11: Display each entity in entities. Only the data for the specified column indexes will be displayed.
     If no column indexes have been specified, then all the data for an entity will be displayed.
@@ -323,4 +330,7 @@ completed("[Load Data]")
 source_data_path()
 process_type()
 entity_name()'''
-print(entity_details())
+# print(entity_details())
+list_entity(
+    ["Earth", "TRUE", 149598262, 147095000, 152100000, 0.0167, 0, 5.5136, 9.8, 11190, 6371.0084, 6378.1366, 6356.8,
+     0.00335], [0, 1, 5, 7])
