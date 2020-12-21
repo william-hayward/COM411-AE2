@@ -222,6 +222,11 @@ def list_entity(entity, cols=[]):
         print(entity)
 
 
+'''list_entity(
+    ["Earth", "TRUE", 149598262, 147095000, 152100000, 0.0167, 0, 5.5136, 9.8, 11190, 6371.0084, 6378.1366, 6356.8,
+     0.00335], [0, 1, 5, 7])'''
+
+
 def list_entities(entities, cols=[]):
     """
     Task 11: Display each entity in entities. Only the data for the specified column indexes will be displayed.
@@ -244,6 +249,19 @@ def list_entities(entities, cols=[]):
     :return: Does not return anything
     """
     # TODO: Your code here
+    entity_list = []
+    if len(cols) != 0:
+        for x in entities:
+            temp_list = []
+            for i in cols:
+                temp_list.append(x[i])
+            entity_list.append(temp_list)
+        print(entity_list)
+    else:
+        print(entities)
+
+
+list_entities([["Earth", 1, 2, 3], ["Mars", 1, 2, 3]], [0, 2, 3])
 
 
 def list_categories():
@@ -331,6 +349,3 @@ source_data_path()
 process_type()
 entity_name()'''
 # print(entity_details())
-list_entity(
-    ["Earth", "TRUE", 149598262, 147095000, 152100000, 0.0167, 0, 5.5136, 9.8, 11190, 6371.0084, 6378.1366, 6356.8,
-     0.00335], [0, 1, 5, 7])
