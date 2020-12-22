@@ -8,6 +8,7 @@ from visual import *
 # Task 18: Create an empty list named 'records'.
 # This will be used to store the date read from the source data file.
 # TODO: Your code here
+records = []
 
 
 def run():
