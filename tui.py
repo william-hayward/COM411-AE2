@@ -279,7 +279,7 @@ def list_categories(categories):
         print(i+":", categories[i])
 
 
-list_categories({'eName': ["Earth", "Moon", "Mars"], 'isPlanet': ["Yes", "No", "Yes"]})
+#list_categories({'eName': ["Earth", "Moon", "Mars"], 'isPlanet': ["Yes", "No", "Yes"]})
 
 
 def gravity_range():
@@ -293,6 +293,12 @@ def gravity_range():
     :return: a tuple with the lower and upper limits
     """
     # TODO: Your code here
+    lower = float(input("Please enter a lower limit for gravity: "))
+    higher = float(input("Please enter a higher limit for gravity: "))
+    return lower, higher
+
+
+print(gravity_range())
 
 
 def orbits():
