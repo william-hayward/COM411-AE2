@@ -13,6 +13,8 @@ def welcome():
     title_length = len(title)  # retrieves the length of the title
     print('-' * int(title_length / 2) + title + '-' * int(title_length / 2))  # displays the title surrounded by dashes
 
+# welcome()
+
 
 def menu():
     """
@@ -51,6 +53,8 @@ def menu():
         error("No valid response was entered.")
         return None
 
+# print(menu())
+
 
 def started(operation):
     """
@@ -65,6 +69,8 @@ def started(operation):
     """
     # TODO: Your code here
     print("\nOperation {} has started.".format(operation))
+
+# started("[Test Operation]")
 
 
 def completed(operation):
@@ -81,6 +87,8 @@ def completed(operation):
     # TODO: Your code here
     print("\nOperation {} has completed.".format(operation))
 
+# completed("[Test Operation]")
+
 
 def error(error_msg):
     """
@@ -96,6 +104,7 @@ def error(error_msg):
     # TODO: Your code here
     print("Error! {}".format(error_msg))
 
+# error("This is a test")
 
 def source_data_path():
     """
@@ -116,6 +125,8 @@ def source_data_path():
     else:
         error("Invalid file format. Must end in '.csv'")
         return None
+
+# source_data_path()
 
 
 def process_type():
@@ -156,6 +167,8 @@ def process_type():
         error("No valid response was entered.")
         return None
 
+# print(process_type())
+
 
 def entity_name():
     """
@@ -169,6 +182,8 @@ def entity_name():
     # TODO: Your code here
     entity = input("Please enter an entity: ")
     return entity
+
+# print(entity_name())
 
 
 def entity_details():
@@ -193,6 +208,8 @@ def entity_details():
     entity_list.append(integers_list)
 
     return entity_list
+
+# print(entity_details())
 
 
 def list_entity(entity, cols=[]):
@@ -221,8 +238,7 @@ def list_entity(entity, cols=[]):
     else:
         print(entity)
 
-
-#list_entity(["Earth", "TRUE", 149598262, 147095000, 152100000, 0.0167, 0, 5.5136, 9.8, 11190, 6371.0084, 6378.1366, 6356.8, 0.00335], [0, 1, 5, 7])
+# list_entity(["Earth", "TRUE", 149598262, 147095000, 152100000, 0.0167, 0, 5.5136, 9.8, 11190, 6371.0084, 6378.1366, 6356.8, 0.00335], [0, 1, 5, 7])
 
 
 def list_entities(entities, cols=[]):
@@ -258,8 +274,7 @@ def list_entities(entities, cols=[]):
     else:
         print(entities)
 
-
-#list_entities([["Earth", "TRUE", 149598262, 147095000, 152100000, 0.0167, 0, 5.5136], ["Moon", "FALSE", 384400, 363300, 405500, 0.0549, 5.145, 3.344]], [0, 1, 5, 7])
+# list_entities([["Earth", "TRUE", 149598262, 147095000, 152100000, 0.0167, 0, 5.5136], ["Moon", "FALSE", 384400, 363300, 405500, 0.0549, 5.145, 3.344]], [0, 1, 5, 7])
 
 
 def list_categories(categories):
@@ -278,8 +293,7 @@ def list_categories(categories):
     for i in categories:
         print(i+":", categories[i])
 
-
-#list_categories({'eName': ["Earth", "Moon", "Mars"], 'isPlanet': ["Yes", "No", "Yes"]})
+# list_categories({'eName': ["Earth", "Moon", "Mars"], 'isPlanet': ["Yes", "No", "Yes"]})
 
 
 def gravity_range():
@@ -297,8 +311,7 @@ def gravity_range():
     higher = float(input("Please enter a higher limit for gravity: "))
     return lower, higher
 
-
-#print(gravity_range())
+# print(gravity_range())
 
 
 def orbits():
@@ -317,8 +330,7 @@ def orbits():
     entity_names = entity_names.split(", ")
     return entity_names
 
-
-#print(orbits())
+# print(orbits())
 
 
 def visualise():
@@ -355,8 +367,7 @@ def visualise():
         error("No valid response was entered.")
         return None
 
-
-#print(visualise())
+# print(visualise())
 
 
 def save():
@@ -383,15 +394,4 @@ def save():
         error("No valid response was entered.")
         return None
 
-
-print(save())
-    
-
-'''welcome()
-menu()
-started("[Load Data]")
-completed("[Load Data]")
-source_data_path()
-process_type()
-entity_name()'''
-# print(entity_details())
+# print(save())
