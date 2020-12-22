@@ -222,9 +222,7 @@ def list_entity(entity, cols=[]):
         print(entity)
 
 
-'''list_entity(
-    ["Earth", "TRUE", 149598262, 147095000, 152100000, 0.0167, 0, 5.5136, 9.8, 11190, 6371.0084, 6378.1366, 6356.8,
-     0.00335], [0, 1, 5, 7])'''
+#list_entity(["Earth", "TRUE", 149598262, 147095000, 152100000, 0.0167, 0, 5.5136, 9.8, 11190, 6371.0084, 6378.1366, 6356.8, 0.00335], [0, 1, 5, 7])
 
 
 def list_entities(entities, cols=[]):
@@ -261,10 +259,10 @@ def list_entities(entities, cols=[]):
         print(entities)
 
 
-list_entities([["Earth", 1, 2, 3], ["Mars", 1, 2, 3]], [0, 2, 3])
+#list_entities([["Earth", "TRUE", 149598262, 147095000, 152100000, 0.0167, 0, 5.5136], ["Moon", "FALSE", 384400, 363300, 405500, 0.0549, 5.145, 3.344]], [0, 1, 5, 7])
 
 
-def list_categories():
+def list_categories(categories):
     """
     Task 12: Display the contents of the dictionary categories.
 
@@ -277,6 +275,11 @@ def list_categories():
     :return: Does not return anything
     """
     # TODO: Your code here
+    for i in categories:
+        print(i+":", categories[i])
+
+
+list_categories({'eName': ["Earth", "Moon", "Mars"], 'isPlanet': ["Yes", "No", "Yes"]})
 
 
 def gravity_range():
