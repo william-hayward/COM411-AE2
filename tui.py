@@ -298,7 +298,7 @@ def gravity_range():
     return lower, higher
 
 
-print(gravity_range())
+#print(gravity_range())
 
 
 def orbits():
@@ -313,6 +313,12 @@ def orbits():
     :return: a list of entity names
     """
     # TODO: Your code here
+    entity_names = input("Please enter a list of entity names (e.g. Jupiter, Earth, Mars): ")
+    entity_names = entity_names.split(", ")
+    return entity_names
+
+
+print(orbits())
 
 
 def visualise():
