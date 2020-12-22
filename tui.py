@@ -318,7 +318,7 @@ def orbits():
     return entity_names
 
 
-print(orbits())
+#print(orbits())
 
 
 def visualise():
@@ -337,6 +337,26 @@ def visualise():
     :return: None if an invalid selection is made otherwise an integer corresponding to a valid option
     """
     # TODO: Your code here
+    response = input('''
+[1] Entities by type
+[2] Entities by gravity
+[3] Summary of orbits
+[4] Animate gravities
+''')
+    if response == "1":
+        return 1
+    elif response == "2":
+        return 2
+    elif response == "3":
+        return 3
+    elif response == "4":
+        return 4
+    else:
+        error("No valid response was entered.")
+        return None
+
+
+print(visualise())
 
 
 def save():
