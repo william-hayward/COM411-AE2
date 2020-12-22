@@ -25,7 +25,7 @@ def run():
         # Assign the selected option to a suitable local variable
         # TODO: Your code here
         choice = menu()
-        
+
         # Task 21: Check if the user selected the option for loading data.  If so, then do the following:
         # - Use the appropriate function in the module tui to display a message to indicate that the data loading
         # operation has started.
@@ -40,6 +40,21 @@ def run():
         # - Read each line from the CSV file and add it to the list 'records'. You should appropriately handle the case
         # where the file cannot be found
         # TODO: Your code here
+        if choice == 1:
+            started("[Load Data]")
+            file_path = source_data_path()
+            if file_path is None:
+                pass
+            else:
+                try:
+                    with open(file_path) as file:
+                        csv_reader = csv.reader(file)
+                        next(csv_reader)
+                        for line in csv_reader:
+                            records.append(line)
+                        completed("[Load Data]")
+                except FileNotFoundError:
+                    error("The specified file does not exist.")
 
         # Task 22: Check if the user selected the option for processing data.  If so, then do the following:
         # - Use the appropriate function in the module tui to display a message to indicate that the data processing

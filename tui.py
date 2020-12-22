@@ -106,6 +106,7 @@ def error(error_msg):
 
 # error("This is a test")
 
+
 def source_data_path():
     """
     Task 6: Retrieve a file path to the source data file.
@@ -120,7 +121,6 @@ def source_data_path():
     # TODO: Your code here
     file_path = input("Please enter a file path: ")
     if file_path.endswith(".csv"):  # checks if the user's file path ends with ".csv"
-        print("Valid file:", file_path)
         return file_path
     else:
         error("Invalid file format. Must end in '.csv'")
