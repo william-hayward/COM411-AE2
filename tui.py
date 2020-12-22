@@ -356,7 +356,7 @@ def visualise():
         return None
 
 
-print(visualise())
+#print(visualise())
 
 
 def save():
@@ -374,7 +374,18 @@ def save():
     :return: None if an invalid selection is made otherwise an integer corresponding to a valid option
     """
     # TODO: Your code here
+    response = input('''
+[1] Export as JSON
+''')
+    if response == "1":
+        return 1
+    else:
+        error("No valid response was entered.")
+        return None
 
+
+print(save())
+    
 
 '''welcome()
 menu()
