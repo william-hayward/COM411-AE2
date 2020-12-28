@@ -220,6 +220,13 @@ def run():
                 entities_pie(type_dictionary)
                 completed("[Entities by type]")
 
+            if second_choice == 2:
+                started("[Entities by gravity]")
+                gravity = gravity_range()
+                gravity_dictionary = categorise_gravity(gravity)  # calls a separate function at the bottom of the main.py file.
+                entities_bar(gravity_dictionary)
+                completed("[Entities by gravity]")
+
         # Task 28: Check if the user selected the option for saving data.  If so, then do the following:
         # - Use the appropriate function in the module tui to indicate that the save data operation has started.
         # - Save the data (see below)

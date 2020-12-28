@@ -12,9 +12,9 @@ def entities_pie(categories):
     """
     labels = 'Planets', 'Non Planets'
     sizes = [len(categories['Planets']), len(categories['Non Planets'])]
-    colors = ['yellowgreen', 'lightcoral']
+    colours = ['yellowgreen', 'lightcoral']
     outline = {"linewidth": 1, "edgecolor": "black"}
-    plt.pie(sizes, labels=labels, autopct="%1.1f%%", colors=colors, wedgeprops=outline)
+    plt.pie(sizes, labels=labels, autopct="%1.1f%%", colors=colours, wedgeprops=outline)
     plt.title("A Pie Chart To Show Planets vs Non Planets")
     plt.tight_layout()
     plt.show()
@@ -29,6 +29,18 @@ def entities_bar(categories):
     :param categories: A dictionary with entities categorised into 'low', 'medium' and 'high' gravity
     :return: Does not return anything
     """
+    labels = ['Lower', 'Medium', 'Higher']
+    sizes = [len(categories['Low']), len(categories['Medium']), len(categories['High'])]
+    colours = ['palegreen', 'lightcoral', 'lightskyblue']
+
+    plt.bar(labels, sizes, width=0.5, color=colours, edgecolor='black')
+
+    plt.ylabel("Number of entities", fontsize=14, fontweight='bold')
+    plt.xlabel("Gravity Range", fontsize=14, fontweight='bold')
+    plt.title("A Bar Chart To Show The Range of Gravity", fontsize=14, fontweight='bold')
+
+    plt.tight_layout()
+    plt.show()
 
 
 def visualise_orbits(summary):
