@@ -10,6 +10,14 @@ def entities_pie(categories):
     :param categories: A dictionary with planets and non-planets
     :return: Does not return anything
     """
+    labels = 'Planets', 'Non Planets'
+    sizes = [len(categories['Planets']), len(categories['Non Planets'])]
+    colors = ['yellowgreen', 'lightcoral']
+    outline = {"linewidth": 1, "edgecolor": "black"}
+    plt.pie(sizes, labels=labels, autopct="%1.1f%%", colors=colors, wedgeprops=outline)
+    plt.title("A Pie Chart To Show Planets vs Non Planets")
+    plt.tight_layout()
+    plt.show()
 
 
 def entities_bar(categories):

@@ -210,6 +210,15 @@ def run():
         #       - Use the appropriate function in the module tui to indicate that the gravity animation visualisation
         #       process has completed.
         # TODO: Your code here
+        if choice == 3:
+            started("[Visualise Data]")
+            second_choice = visualise()
+
+            if second_choice == 1:
+                started("[Entities by type]")
+                type_dictionary = categorise_type()  # calls a separate function at the bottom of the main.py file.
+                entities_pie(type_dictionary)
+                completed("[Entities by type]")
 
         # Task 28: Check if the user selected the option for saving data.  If so, then do the following:
         # - Use the appropriate function in the module tui to indicate that the save data operation has started.
