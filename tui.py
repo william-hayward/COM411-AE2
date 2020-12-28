@@ -102,7 +102,7 @@ def error(error_msg):
     :return: Does not return anything
     """
     # TODO: Your code here
-    print("Error! {}".format(error_msg))
+    print("\nError! {}".format(error_msg))
 
 # error("This is a test")
 
@@ -180,7 +180,7 @@ def entity_name():
     :return: the name of an entity
     """
     # TODO: Your code here
-    entity = input("Please enter an entity: ")
+    entity = input("\nPlease enter an entity: ")
     return entity
 
 # print(entity_name())

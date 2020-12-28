@@ -1,9 +1,9 @@
 # Task 17: Import the modules csv, tui and visual
 # TODO: Your code here
 import csv
+from re import search
 from tui import *
 from visual import *
-
 
 # Task 18: Create an empty list named 'records'.
 # This will be used to store the date read from the source data file.
@@ -12,7 +12,6 @@ records = []
 
 
 def run():
-
     # Task 19: Call the function welcome of the module tui.
     # This will display our welcome message when the program is executed.
     # TODO: Your code here
@@ -120,6 +119,48 @@ def run():
         #       - Use the appropriate function in the module tui to indicate that the orbit summary process has
         #       completed.
         # TODO: Your code here
+        if choice == 2:
+            started("[Process Data]")
+            second_choice = process_type()
+
+            if second_choice == 1:
+                started("[Retrieve entity]")
+                entity = entity_name()
+                entity_found = retrieve_entity(entity)  # calls a separate function at the bottom of the main.py file. Finds the entity in records
+                if entity_found is None:
+                    error("The specified entity was not found!")
+                else:
+                    print(entity_found)
+                    completed("[Retrieve entity]")
+                    
+            elif second_choice == 2:
+                entity_details_list = []
+                started("[Retrieve entity details]")
+                entity = entity_details()
+                retrieved_entity = retrieve_entity(entity[0])
+                if retrieved_entity is None:
+                    error("The specified entity was not found!")
+                else:
+                    for i in entity[1]:
+                        entity_details_list.append(retrieved_entity[i])
+                    print(entity_details_list)
+                    completed("[Retrieve entity details]")
+
+            elif second_choice == 3:
+                started("[Categorise entities by type]")
+                type_dictionary = categorise_type()  # calls a separate function at the bottom of the main.py file.
+                list_categories(type_dictionary)
+
+            elif second_choice == 4:
+                started("[Categorise entities by gravity]")
+                gravity = gravity_range()
+                gravity_dictionary = categorise_gravity(gravity) # calls a separate function at the bottom of the main.py file.
+                list_categories(gravity_dictionary)
+
+            elif second_choice == 5:
+                started("[Summarise entities by orbit]")
+                orbited_entities = orbits()
+                print(orbited_entities)
 
         # Task 23: Check if the user selected the option for visualising data.  If so, then do the following:
         # - Use the appropriate function in the module tui to indicate that the data visualisation operation
@@ -189,6 +230,40 @@ def run():
         # Task 30: If the user selected an invalid option then use the appropriate function of the module tui to
         # display an error message
         # TODO: Your code here
+
+
+def retrieve_entity(entity):
+    for i in range(len(records)):
+        for j in range(len(records[i][0])):
+            if records[i][j] == entity:
+                entity_record = records[i]
+                return entity_record
+
+
+def categorise_type():
+    entity_by_type = {'Planets': [], 'Non Planets': []}
+    for i in range(len(records)):
+        if records[i][1] == 'FALSE':
+            entity_by_type['Non Planets'].append(records[i][0])
+        else:
+            entity_by_type['Planets'].append(records[i][0])
+    return entity_by_type
+
+
+def categorise_gravity(gravity_range):
+    entity_by_gravity = {'Low': [], 'Medium': [], 'High': []}
+    for i in range(len(records)):
+        if float(records[i][8]) < gravity_range[0]:
+            entity_by_gravity['Low'].append(records[i][0])
+        elif float(records[i][8]) > gravity_range[1]:
+            entity_by_gravity['High'].append(records[i][0])
+        else:
+            entity_by_gravity['Medium'].append(records[i][0])
+    return entity_by_gravity
+
+
+def summarise_orbit():
+    entity_by_gravity = {}
 
 
 if __name__ == "__main__":

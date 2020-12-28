@@ -23,7 +23,7 @@ def entities_bar(categories):
     """
 
 
-def orbits(summary):
+def visualise_orbits(summary):
     """
     Task 26: Display subplots where each subplot shows the "small" and "large" entities that orbit the planet.
 
