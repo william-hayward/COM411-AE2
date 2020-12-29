@@ -50,7 +50,6 @@ def menu():
     elif response == "5":
         return 5
     else:
-        error("No valid response was entered.")
         return None
 
 # print(menu())

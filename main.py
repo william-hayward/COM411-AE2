@@ -160,7 +160,8 @@ def run():
             elif second_choice == 5:
                 started("[Summarise entities by orbit]")
                 orbited_entities = orbits()
-                print(orbited_entities)
+                print(summarise_orbit(orbited_entities))
+                completed("[Summarise entities by orbit]")
 
         # Task 23: Check if the user selected the option for visualising data.  If so, then do the following:
         # - Use the appropriate function in the module tui to indicate that the data visualisation operation
@@ -236,16 +237,22 @@ def run():
         # abstraction and inheritance.  You should create an AbstractWriter class with abstract methods and a concrete
         # Writer class that inherits from the AbstractWriter class.  You should then use this to write the records to
         # a JSON file using in the following order: all the planets in alphabetical order followed by non-planets 
-        # in alphabetical order.
+        # in alphabetical order.o
         # TODO: Your code here
+        if choice == 4:
+            pass
 
         # Task 29: Check if the user selected the option for exiting.  If so, then do the following:
         # break out of the loop
         # TODO: Your code here
+        if choice == 5:
+            break
 
         # Task 30: If the user selected an invalid option then use the appropriate function of the module tui to
         # display an error message
         # TODO: Your code here
+        if choice is None:
+            error("No valid response was entered.")
 
 
 def retrieve_entity(entity):
@@ -266,20 +273,31 @@ def categorise_type():
     return entity_by_type
 
 
-def categorise_gravity(gravity_range):
+def categorise_gravity(gravity_ranges):
     entity_by_gravity = {'Low': [], 'Medium': [], 'High': []}
     for i in range(len(records)):
-        if float(records[i][8]) < gravity_range[0]:
+        if float(records[i][8]) < gravity_ranges[0]:
             entity_by_gravity['Low'].append(records[i][0])
-        elif float(records[i][8]) > gravity_range[1]:
+        elif float(records[i][8]) > gravity_ranges[1]:
             entity_by_gravity['High'].append(records[i][0])
         else:
             entity_by_gravity['Medium'].append(records[i][0])
     return entity_by_gravity
 
 
-def summarise_orbit():
-    entity_by_gravity = {}
+def summarise_orbit(entity):
+    entity_by_orbit = {}
+    for i in range(len(entity)):
+        for j in range(len(records)):
+            if records[j][21] == entity[i] and float(records[j][10]) < float(100):
+                entity_by_orbit[entity[i]] = records[j][0]
+                entity_by_orbit['category'] = 'low'
+            elif records[j][21] == entity[i] and float(records[j][10]) > float(100):
+                entity_by_orbit[entity[i]] = records[j][0]
+                entity_by_orbit['category'] = 'high'
+            else:
+                pass
+    return entity_by_orbit
 
 
 if __name__ == "__main__":
