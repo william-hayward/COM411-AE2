@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 
 
 def entities_pie(categories):
@@ -73,4 +74,26 @@ def gravity_animation(categories):
     :param categories: A dictionary containing "low", "medium" and "high" gravity entities
     :return: Does not return anything
     """
+    # code attempted - code does not work as intended
+    fig, (ax1, ax2, ax3) = plt.subplots(1, 3)
 
+    def animate(frame):
+        plt.suptitle("Animation of Low, Medium and High Gravities")
+        for i in categories['Low']:
+            ax1.set_xlabel("Low")
+            ax1.set_yticks([])
+            ax1.set_xticks([])
+            ax1.plot(i, i, 'g--o', markersize=2)
+        for i in categories['Medium']:
+            ax2.set_xlabel("Medium")
+            ax2.set_yticks([])
+            ax2.set_xticks([])
+            ax2.plot(i, i, 'r--o', markersize=2)
+        for i in categories['High']:
+            ax3.set_xlabel("High")
+            ax3.set_yticks([])
+            ax3.set_xticks([])
+            ax3.plot(i, i, 'b--o', markersize=2)
+
+    some_animation = animation.FuncAnimation(fig, animate, frames=10, interval=1000)
+    plt.show()

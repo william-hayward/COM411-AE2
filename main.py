@@ -157,11 +157,14 @@ def run():
                 gravity_dictionary = categorise_gravity(gravity) # calls a separate function at the bottom of the main.py file.
                 list_categories(gravity_dictionary)
 
+            # code attempted - code does not work as intended
             elif second_choice == 5:
                 started("[Summarise entities by orbit]")
                 orbited_entities = orbits()
                 print(summarise_orbit(orbited_entities))
                 completed("[Summarise entities by orbit]")
+
+            completed("[Process Data]")
 
         # Task 23: Check if the user selected the option for visualising data.  If so, then do the following:
         # - Use the appropriate function in the module tui to indicate that the data visualisation operation
@@ -221,12 +224,26 @@ def run():
                 entities_pie(type_dictionary)
                 completed("[Entities by type]")
 
-            if second_choice == 2:
+            elif second_choice == 2:
                 started("[Entities by gravity]")
                 gravity = gravity_range()
                 gravity_dictionary = categorise_gravity(gravity)  # calls a separate function at the bottom of the main.py file.
                 entities_bar(gravity_dictionary)
                 completed("[Entities by gravity]")
+
+            # code not written
+            elif second_choice == 3:
+                pass
+
+            # code attempted - code does not work as intended
+            elif second_choice == 4:
+                started("[Animate gravities]")
+                gravity = gravity_range()
+                gravity_dictionary = animate_gravity(gravity) # calls a separate function at the bottom of the main.py file.
+                gravity_animation(gravity_dictionary)
+                completed("[Animate gravities]")
+
+            completed("[Visualise Data]")
 
         # Task 28: Check if the user selected the option for saving data.  If so, then do the following:
         # - Use the appropriate function in the module tui to indicate that the save data operation has started.
@@ -239,6 +256,8 @@ def run():
         # a JSON file using in the following order: all the planets in alphabetical order followed by non-planets 
         # in alphabetical order.o
         # TODO: Your code here
+
+        # code not witten
         if choice == 4:
             pass
 
@@ -285,6 +304,19 @@ def categorise_gravity(gravity_ranges):
     return entity_by_gravity
 
 
+def animate_gravity(gravity_ranges):
+    entity_by_gravity = {'Low': [], 'Medium': [], 'High': []}
+    for i in range(len(records)):
+        if float(records[i][8]) < gravity_ranges[0]:
+            entity_by_gravity['Low'].append(records[i][8])
+        elif float(records[i][8]) > gravity_ranges[1]:
+            entity_by_gravity['High'].append(records[i][8])
+        else:
+            entity_by_gravity['Medium'].append(records[i][8])
+    return entity_by_gravity
+
+
+# code attempted - code does not work as intended - task 22 part 5
 def summarise_orbit(entity):
     entity_by_orbit = {}
     for i in range(len(entity)):
