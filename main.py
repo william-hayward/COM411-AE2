@@ -1,7 +1,6 @@
 # Task 17: Import the modules csv, tui and visual
 # TODO: Your code here
 import csv
-from re import search
 from tui import *
 from visual import *
 
